@@ -21,6 +21,7 @@ app.use(cors({
     origin: process.env.FRONTEND_URL,
     credentials: true
 }))
+connectDB();
 
 app.use("/api/auth", authRoutes);
 app.use("/api/message", messageRoutes);
@@ -35,5 +36,5 @@ app.use("/api/message", messageRoutes);
 
 server.listen(PORT, () => {
     console.log('Server is running on Port : ' + PORT);
-    connectDB();
+    
 })
